@@ -58,7 +58,7 @@ public class OrdenIJGZController {
         }
 
         ordenIJGZService.crearOEditar(orden);
-        attributes.addFlashAttribute("msg", "Marca creada correctamente");
+        attributes.addFlashAttribute("msg", "Orden creada correctamente");
         return "redirect:/ordenes";
     }
 
@@ -86,7 +86,7 @@ public String details(@PathVariable("id") Long id, Model model) {
         }
 
         ordenIJGZService.crearOEditar(orden);
-        attributes.addFlashAttribute("msg", "Marca modificada correctamente");
+        attributes.addFlashAttribute("msg", "Orden modificada correctamente");
         return "redirect:/ordenes";
     }
 
@@ -100,7 +100,7 @@ public String details(@PathVariable("id") Long id, Model model) {
     @PostMapping("/delete")
     public String delete(OrdenIJGZ orden, RedirectAttributes attributes){
         ordenIJGZService.eliminarPorId(orden.getId());
-        attributes.addFlashAttribute("msg", "marca eliminada correctamente");
+        attributes.addFlashAttribute("msg", "Orden eliminada correctamente");
         return "redirect:/ordenes";
     }
 }
