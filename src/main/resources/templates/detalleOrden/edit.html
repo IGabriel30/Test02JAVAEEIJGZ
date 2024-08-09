@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+    layout:decorate="layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Editar Detalle de Orden</h1>
+
+    <form th:action="@{/detallesOrden/update}" th:object="${detalleOrden}" method="post">
+        <input type="hidden" th:field="*{id}"> 
+
+        <div class="form-group">
+            <label for="productoIJGZ">Producto:</label>
+            <select class="form-control" id="productoIJGZ" th:field="*{productoIJGZ}" required>
+                <option th:each="producto : ${productos}" th:value="${producto.id}" th:text="${producto.nombreIJGZ}"></option> 
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ordenIJGZ">Orden:</label>
+            <select class="form-control" id="ordenIJGZ" th:field="*{ordenIJGZ.id}" required>
+                <option th:each="orden : ${ordenes}" 
+                        th:value="${orden.id}" 
+                        th:text="${orden.id}"></option> 
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cantidadIJGZ">Cantidad:</label>
+            <input type="number" class="form-control" id="cantidadIJGZ" th:field="*{cantidadIJGZ}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="precioIJGZ">Precio:</label>
+            <input type="number" step="0.01" class="form-control" id="precioIJGZ" th:field="*{precioIJGZ}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a th:href="@{/detallesOrden}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+</html>

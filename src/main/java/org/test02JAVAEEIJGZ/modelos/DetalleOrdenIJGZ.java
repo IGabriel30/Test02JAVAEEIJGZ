@@ -19,11 +19,11 @@ public class DetalleOrdenIJGZ {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "productoIJGZ_id")
+    @JoinColumn(name = "producto_id")
     private ProductoIJGZ productoIJGZ;
 
     @ManyToOne
-    @JoinColumn(name = "ordenIJGZ_id")
+    @JoinColumn(name = "orden_id")
     private OrdenIJGZ ordenIJGZ;
 
     @NotNull(message = "La cantidad es requerida")

@@ -21,7 +21,7 @@ public class ProductoIJGZ {
     @NotBlank(message = "El nombre es requerido.")
     private String nombreIJGZ;
 
-     @OneToMany(mappedBy = "productosIJGZ", cascade = CascadeType.ALL)
+     @OneToMany(mappedBy = "productoIJGZ", cascade = CascadeType.ALL)
     private List<DetalleOrdenIJGZ> detallesOrdenIJGZ;
 
 
